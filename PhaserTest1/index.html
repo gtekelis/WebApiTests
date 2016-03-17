@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="libs/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+
+        var rect2;
+
+        function preload() {
+        }
+
+        function create() {            
+            game.stage.backgroundColor = "#e1e1e1";
+            var graphics = game.add.graphics(100, 100);
+
+            //set a fill and line style
+            graphics.beginFill(0x0fffff);
+            graphics.lineStyle(2, 0x000000, 1);                       
+            graphics.drawRect(20, 250, 50, 50);
+
+
+
+            var line1 = new Phaser.Line(5, 8, 125, 167);            
+            game.debug.geom(line1, '#9999ff');
+
+            rect2 = new Phaser.Rectangle(85, 120, 120, 120);
+            //game.debug.geom(rect2, '#9999ff', true);
+
+            game.add.button(game.world.centerX, game.world.centerY, 'rect2', actionOnClick, this, 1, 0, 2);
+
+
+            // play button
+            var g = this.add.graphics(0, 0);
+            // draw a rectangle            
+            g.lineStyle(2, 0x0000FF, 0.5);
+            g.beginFill(0xFF8080, 1);
+            g.drawRect(this.world.centerX - 50, this.world.centerY - 50, 100, 100);
+            g.endFill();
+            // input                     
+            g.inputEnabled = true;
+            g.events.onInputDown.add(actionOnClick, this);
+
+
+            var rect = game.add.graphics(0, 0);
+            rect.lineStyle(0);
+            rect.beginFill(0x333333, 1);
+            rect.drawRect(150, 180, 50, 50);
+            var mysprite = game.add.sprite(150, 180);
+            mysprite.width = 50;
+            mysprite.height = 50;
+            Phaser.Pointer()
+            mysprite.inputEnabled = true;
+            mysprite.events.onInputOver.add(actionOnClick, this);
+            
+        }
+
+        function actionOnClick() {                        
+            console.log('called function for click event');
+            //  Manually changing the frames of the button, i.e, how it will look when you play with it
+            //rect2.setFrames(4, 3, 5);
+
+        }
+
+        function update() {
+        }
+
+    </script>
+
+</body>
+</html>
