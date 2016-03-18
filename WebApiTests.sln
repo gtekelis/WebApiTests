@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhaserTest1", "PhaserTest1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenvaPhaserTutorial", "ZenvaPhaserTutorial\ZenvaPhaserTutorial.csproj", "{D30431C9-A289-40D1-8B29-A29C413B7783}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfessionalJavascriptBook", "ProfessionalJavascriptBook\ProfessionalJavascriptBook.csproj", "{DEE4E17A-2A48-4A09-A44B-063F834055A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D30431C9-A289-40D1-8B29-A29C413B7783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D30431C9-A289-40D1-8B29-A29C413B7783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D30431C9-A289-40D1-8B29-A29C413B7783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

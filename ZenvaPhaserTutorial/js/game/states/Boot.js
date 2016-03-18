@@ -1,6 +1,6 @@
 ﻿/// <reference path="../../library/phaser.js" />
 var ZenvaRunner = function () { };
-
+ZenvaRunner.
 ZenvaRunner.Boot = function () { };
 
 ZenvaRunner.Boot.prototype = {
@@ -9,7 +9,7 @@ ZenvaRunner.Boot.prototype = {
         this.load.image('preloadbar', 'assets/images/preloader-bar.png');
     },
 
-    create: function(){
+    create: function () {
         this.game.stage.backGroundColor = '#fff';
     }
 };
