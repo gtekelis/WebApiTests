@@ -22,18 +22,19 @@
         function preload() {
         }
 
-        function create() {            
+        function create() {
+
             game.stage.backgroundColor = "#e1e1e1";
             var graphics = game.add.graphics(100, 100);
 
             //set a fill and line style
             graphics.beginFill(0x0fffff);
-            graphics.lineStyle(2, 0x000000, 1);                       
+            graphics.lineStyle(2, 0x000000, 1);
             graphics.drawRect(20, 250, 50, 50);
 
 
 
-            var line1 = new Phaser.Line(5, 8, 125, 167);            
+            var line1 = new Phaser.Line(5, 8, 125, 167);
             game.debug.geom(line1, '#9999ff');
 
             rect2 = new Phaser.Rectangle(85, 120, 120, 120);
@@ -44,12 +45,12 @@
 
             // play button
             var g = this.add.graphics(0, 0);
-            // draw a rectangle            
+            // draw a rectangle
             g.lineStyle(2, 0x0000FF, 0.5);
             g.beginFill(0xFF8080, 1);
             g.drawRect(this.world.centerX - 50, this.world.centerY - 50, 100, 100);
             g.endFill();
-            // input                     
+            // input
             g.inputEnabled = true;
             g.events.onInputDown.add(actionOnClick, this);
 
@@ -64,10 +65,10 @@
             Phaser.Pointer()
             mysprite.inputEnabled = true;
             mysprite.events.onInputOver.add(actionOnClick, this);
-            
+
         }
 
-        function actionOnClick() {                        
+        function actionOnClick() {
             console.log('called function for click event');
             //  Manually changing the frames of the button, i.e, how it will look when you play with it
             //rect2.setFrames(4, 3, 5);

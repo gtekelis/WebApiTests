@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>es model 1</title>
+    <meta charset="utf-8" />
+    <script src="libs/phaser.js"></script>
+    <style>
+        body{
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+        
+        function preload() {
+            game.load.image('generator', 'assets/images/generator.png');
+        }
+
+        function create() {            
+
+            ////set background color
+            game.stage.backgroundColor = '#ffffff';
+
+            ////add generator sprite
+            game.add.sprite(19, 150, 'generator');
+
+            ////draw line 1
+            var line = game.add.graphics();
+
+            line.beginFill(0x2c2c2c);
+            line.lineStyle(2, 0x2c2c2c, 1);
+            line.drawRect(86, 183, 41, 2);
+
+            ////draw transformer
+            var givenXposition = 127;
+            var givenYposition = 166;
+            var transformer1Diameter = 34;
+            var transformer1Xposition = givenXposition + (transformer1Diameter / 2);
+            var transformer1Yposition = givenYposition + (transformer1Diameter / 2);
+            var transformer1 = game.add.graphics();
+
+            //first circle
+            transformer1.lineStyle(2, 0x2c2c2c, 1);
+            transformer1.beginFill(0xffffff, 0);            
+            transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);            
+            transformer1.endFill();
+            transformer1.inputEnabled = true;
+            
+
+            //second circle
+            //givenXposition = 162;            
+            transformer1.beginFill(0xffffff, 0);
+            transformer1Xposition = givenXposition + (transformer1Diameter - 5) + (transformer1Diameter / 2);
+            transformer1Yposition = givenYposition + (transformer1Diameter / 2);            
+            transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);
+            transformer1.endFill();
+
+            //call function from both transformer circles
+            transformer1.events.onInputDown.add(actionOnClick, this);
+
+            ////end draw transformer
+
+            ////draw line 2
+            line.drawRect(190, 183, 41, 2);
+
+            ////draw bus 1
+            line.drawRect(233, 146, 4, 78);
+
+            ////draw line 3
+            line.drawRect(237, 183, 160, 2);
+        }
+
+        function update() { }
+
+        /*
+        * custom functions
+        */
+        function actionOnClick() {
+            //console.log('called function for click event');            
+            alert('info here');
+        }
+
+    </script>
+</body>
+</html>
