@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="assets\audio\Pamgaea.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,7 +76,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\audio\bounce.wav" />
+    <Content Include="assets\audio\coin.wav" />
+    <Content Include="assets\audio\death.wav" />
+    <Content Include="assets\audio\flap.wav" />
+    <Content Include="assets\audio\Pamgaea.mp3" />
+    <Content Include="assets\audio\rocket.wav" />
+    <Content Include="assets\fonts\minecraftia\minecraftia.png" />
+    <Content Include="assets\fonts\minecraftia\minecraftia.xml" />
+    <Content Include="assets\images\background.png" />
+    <Content Include="assets\images\coins-ps.png" />
+    <Content Include="assets\images\foreground.png" />
+    <Content Include="assets\images\ground.png" />
+    <Content Include="assets\images\jetpack-ps.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\missiles-ps.png" />
+    <Content Include="assets\images\preloader-bar.png" />
     <Content Include="index.html" />
+    <Content Include="js\game\states\Boot.js" />
     <Content Include="js\library\phaser.js" />
     <Content Include="js\main.js" />
     <Content Include="Web.config" />
@@ -84,11 +102,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\audio\" />
-    <Folder Include="assets\fonts\" />
-    <Folder Include="assets\images\" />
     <Folder Include="js\game\prefabs\" />
-    <Folder Include="js\game\states\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
