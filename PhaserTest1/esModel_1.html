@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <script src="libs/phaser.js"></script>
     <style>
-        body{
-            margin:0;
+        body {
+            margin: 0;
         }
     </style>
 </head>
@@ -16,18 +16,23 @@
 
         var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
-        
+        //json object from nickos (we must define its schema)
+        var diagram = [
+            { type: 'generator', x: 19, y: 150, name: 'generator' }
+        ];
+
+
         function preload() {
             game.load.image('generator', 'assets/images/generator.png');
         }
 
-        function create() {            
+        function create() {
 
             ////set background color
             game.stage.backgroundColor = '#ffffff';
 
             ////add generator sprite
-            game.add.sprite(19, 150, 'generator');
+            game.add.sprite(diagram[0].x, diagram[0].y, diagram[0].name);
 
             ////draw line 1
             var line = game.add.graphics();
@@ -46,17 +51,17 @@
 
             //first circle
             transformer1.lineStyle(2, 0x2c2c2c, 1);
-            transformer1.beginFill(0xffffff, 0);            
-            transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);            
+            transformer1.beginFill(0xffffff, 0);
+            transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);
             transformer1.endFill();
             transformer1.inputEnabled = true;
-            
+
 
             //second circle
-            //givenXposition = 162;            
+            //givenXposition = 162;
             transformer1.beginFill(0xffffff, 0);
             transformer1Xposition = givenXposition + (transformer1Diameter - 5) + (transformer1Diameter / 2);
-            transformer1Yposition = givenYposition + (transformer1Diameter / 2);            
+            transformer1Yposition = givenYposition + (transformer1Diameter / 2);
             transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);
             transformer1.endFill();
 
@@ -81,7 +86,7 @@
         * custom functions
         */
         function actionOnClick() {
-            //console.log('called function for click event');            
+            //console.log('called function for click event');
             alert('info here');
         }
 
