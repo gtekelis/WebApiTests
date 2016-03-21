@@ -3,6 +3,8 @@
 <head>
     <title>es model 1</title>
     <meta charset="utf-8" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <script src="libs/jquery-1.12.2.min.js"></script>
     <script src="libs/phaser.js"></script>
     <style>
         body {
@@ -12,84 +14,37 @@
 </head>
 <body>
 
+
+
+    <script src="js/PhaserGameModule.js"></script>
+    <script src="js/electricSystemModule.js"></script>
+    <script src="js/EventHandlersModule.js"></script>
+
     <script>
+        var game = phaserGame.CreateGame();
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
-
-        //json object from nickos (we must define its schema)
-        var diagram = [
-            { type: 'generator', x: 19, y: 150, name: 'generator' }
+        //json object from nikos (we must define its schema)
+        var graph = [
+            { type: 'generator', x: 19, y: 150, name: 'generator' },
+            { type: 'line', x: 86, y: 183, width: 41, height: 2, name: 'line1' },
+            { type: 'line', x: 237, y: 183, width: 160, height: 2, name: 'line3' },
+            { type: 'bus', x: 233, y: 146, width: 4, height: 78, name: 'bus1' },
+            { type: 'line', x: 190, y: 183, width: 41, height: 2, name: 'line2' },
+            { type: 'transformer', x: 127, y: 166, diameter: 34, name: 'transformer1' }
         ];
 
-
+        //#region BUILT-IN FUNCTIONS
         function preload() {
             game.load.image('generator', 'assets/images/generator.png');
         }
 
         function create() {
-
-            ////set background color
-            game.stage.backgroundColor = '#ffffff';
-
-            ////add generator sprite
-            game.add.sprite(diagram[0].x, diagram[0].y, diagram[0].name);
-
-            ////draw line 1
-            var line = game.add.graphics();
-
-            line.beginFill(0x2c2c2c);
-            line.lineStyle(2, 0x2c2c2c, 1);
-            line.drawRect(86, 183, 41, 2);
-
-            ////draw transformer
-            var givenXposition = 127;
-            var givenYposition = 166;
-            var transformer1Diameter = 34;
-            var transformer1Xposition = givenXposition + (transformer1Diameter / 2);
-            var transformer1Yposition = givenYposition + (transformer1Diameter / 2);
-            var transformer1 = game.add.graphics();
-
-            //first circle
-            transformer1.lineStyle(2, 0x2c2c2c, 1);
-            transformer1.beginFill(0xffffff, 0);
-            transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);
-            transformer1.endFill();
-            transformer1.inputEnabled = true;
-
-
-            //second circle
-            //givenXposition = 162;
-            transformer1.beginFill(0xffffff, 0);
-            transformer1Xposition = givenXposition + (transformer1Diameter - 5) + (transformer1Diameter / 2);
-            transformer1Yposition = givenYposition + (transformer1Diameter / 2);
-            transformer1.drawCircle(transformer1Xposition, transformer1Yposition, transformer1Diameter);
-            transformer1.endFill();
-
-            //call function from both transformer circles
-            transformer1.events.onInputDown.add(actionOnClick, this);
-
-            ////end draw transformer
-
-            ////draw line 2
-            line.drawRect(190, 183, 41, 2);
-
-            ////draw bus 1
-            line.drawRect(233, 146, 4, 78);
-
-            ////draw line 3
-            line.drawRect(237, 183, 160, 2);
+            electricSystem.SetStageBackColor('#BECED4');
+            electricSystem.CreateEsGraph(JSON.stringify(graph));
         }
 
         function update() { }
-
-        /*
-        * custom functions
-        */
-        function actionOnClick() {
-            //console.log('called function for click event');
-            alert('info here');
-        }
-
+        //#endregion BUILT-IN FUNCTIONS
     </script>
 </body>
 </html>

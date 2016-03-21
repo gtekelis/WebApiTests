@@ -67,7 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\generator.png" />
+    <Content Include="css\animate.css" />
     <Content Include="esModel_1.html" />
+    <Content Include="js\ElectricSystemModule.js" />
+    <Content Include="js\EventHandlersModule.js" />
+    <Content Include="libs\jquery-1.12.2.min.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,6 +83,7 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="libs\phaser.js" />
+    <Content Include="js\PhaserGameModule.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
