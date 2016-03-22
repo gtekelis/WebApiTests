@@ -8,9 +8,9 @@ var eventHandlers = (function () {
         
     //private members
     function actionOnClick() {
-        electricSystem.SetStageBackColor('#FF0000');
-        $('body').addClass('animated hinge');
-        //alert('info here');
+        //electricSystem.SetStageBackColor('#FF0000');
+        //$('body').addClass('animated hinge');
+        $("#dialog").dialog();
     }
     
     //public members
