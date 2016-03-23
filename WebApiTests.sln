@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenvaPhaserTutorial", "Zenv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfessionalJavascriptBook", "ProfessionalJavascriptBook\ProfessionalJavascriptBook.csproj", "{DEE4E17A-2A48-4A09-A44B-063F834055A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToddlerFarmAnimals", "ToddlerFarmAnimals\ToddlerFarmAnimals.csproj", "{87E5985A-A53D-4D3D-8159-265E4DAA641F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEE4E17A-2A48-4A09-A44B-063F834055A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E5985A-A53D-4D3D-8159-265E4DAA641F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E5985A-A53D-4D3D-8159-265E4DAA641F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E5985A-A53D-4D3D-8159-265E4DAA641F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E5985A-A53D-4D3D-8159-265E4DAA641F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
