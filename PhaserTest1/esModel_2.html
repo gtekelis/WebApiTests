@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>es model 1</title>
+    <meta charset="utf-8" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="libs/jquery-1.12.2.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="libs/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <script src="js/PhaserGameModule.js"></script>
+    <script src="js/electricSystemModule2.js"></script>
+    <script src="js/EventHandlersModule.js"></script>
+
+    <script>
+        var game = phaserGame.CreateGame();
+
+        //json object from nikos (we must define its schema)
+        var graph = [
+            { type: 'generator', x: 19, y: 150, name: 'generator' },
+            { type: 'generator', x: 19, y: 320, name: 'generator' },
+
+            { type: 'line', x: 86, y: 183, x2: 126, y2: 183, name: 'line1' },
+            { type: 'line', x: 86, y: 353, x2: 126, y2: 353, name: 'line4' },
+
+            { type: 'line', x: 190, y: 183, x2: 231, y2: 183, name: 'line2' },
+            { type: 'line', x: 190, y: 353, x2: 232, y2: 353, name: 'line5' },
+
+            { type: 'line', x: 234, y: 210, x2: 393, y2: 210, name: 'line3' },
+            { type: 'line', x: 234, y: 330, x2: 394, y2: 330, name: 'line6' },
+
+            { type: 'bus', x: 233, y: 146, x2: 233, y2: 224, name: 'bus1' },
+            { type: 'bus', x: 233, y: 316, x2: 233, y2: 394, name: 'bus2' },
+            { type: 'bus', x: 395, y: 160, x2: 395, y2: 370, name: 'bus3' },
+
+            { type: 'transformer', x: 127, y: 166, diameter: 34, name: 'transformer1' },
+            { type: 'transformer', x: 127, y: 336, diameter: 34, name: 'transformer2' }
+        ];
+
+        //#region BUILT-IN FUNCTIONS
+        function preload() {
+            game.load.image('generator', 'assets/images/generator.png');
+        }
+
+        function create() {
+            electricSystem.SetStageBackColor('#BECED4');
+            electricSystem.CreateEsGraph(JSON.stringify(graph));
+        }
+
+        function update() { }
+        //#endregion BUILT-IN FUNCTIONS
+    </script>
+
+
+    <div id="dialog" title="Generator: Gen1" hidden>
+        
+        <table cellpadding="4">
+            <tr>
+                <td>Name</td>
+                <td>Gen1</td>
+            </tr>
+            <tr>
+                <td>RatedPower</td>
+                <td>10.00</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Gas</td>
+            </tr>
+            <tr>
+                <td>FuelType</td>
+                <td>Mazut</td>
+            </tr>
+            <tr>
+                <td>MinActivePower</td>
+                <td>10.00</td>
+            </tr>
+            <tr>
+                <td>MaxActivePower</td>
+                <td>11.00</td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
