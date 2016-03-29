@@ -5,117 +5,36 @@
     <meta charset="utf-8" />
     <link href="css/animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
     <script src="libs/jquery-1.12.2.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
     <script src="libs/phaser.js"></script>
+
     <style>
         body {
             margin: 0;
         }
     </style>
+
 </head>
 <body>
 
+    <h1>Graph</h1>
 
+    <!-- graph will be rendered inside this div -->
+    <div id="graphContainer"></div>
 
+    <!-- javascript section -->
     <script src="js/PhaserGameModule.js"></script>
     <script src="js/ElectricSystemModule3_nick.js"></script>
     <script src="js/EventHandlersModule.js"></script>
+    <script src="js/GraphData.js"></script>
 
     <script>
         var game = phaserGame.CreateGame();
 
-
-        //json object from nikos (we must define its schema)
-        var graph =
-            [
-                {
-                    type: "generator",
-                    x: "25",
-                    y: "165",
-                    name: "Gen1",
-                    rotation: "0"
-                },
-   {
-       type: "bus",
-       x: "80",
-       y: "165",
-       name: "BusName",
-       rotation: "0",
-       width: "1",
-       height: "35.0000000000001"
-   },
-   {
-       type: "transformer",
-       x: "117.5",
-       y: "191.230769230769",
-       name: "Trans1",
-       diameter: "8.76923076923076",
-
-   },
-   {
-       type: "line",
-       beginX: "35",
-       beginY: "170",
-       endX: "80.5",
-       endY: "179",
-       name: "L1",
-       width: "45.5",
-       height: "8.99999999999998"
-   },
-   {
-       type: "line",
-       beginX: "80.5",
-       beginY: "193",
-       endX: "117.5",
-       endY: "195.615384615385",
-       name: "L1",
-       width: "37",
-       height: "5"
-   },
-   {
-       type: "transformer",
-       x: "117.5",
-       y: "165",
-       name: "Trans1",
-       diameter: "8.76923076923076",
-
-   },
-   {
-       type: "line",
-       beginX: "80.5",
-       beginY: "175.5",
-       endX: "117.5",
-       endY: "169.384615384615",
-       name: "L1",
-       width: "37",
-       height: "-6.11538461538464"
-   },
-   {
-       type: "line",
-       beginX: "132.5",
-       beginY: "195.615384615385",
-       endX: "186.5",
-       endY: "195.615384615385",
-       name: "L1",
-       width: "54",
-       height: "5"
-   },
-   {
-       type: "line",
-       beginX: "132.5",
-       beginY: "169.384615384615",
-       endX: "162",
-       endY: "165",
-       name: "L1",
-       width: "29.5",
-       height: "-5"
-   }
-            ]
-        ;
-
+        //graph json object from nikos
+        var graph = JSON.stringify(graphData.GetGraphData());
+        
         //#region BUILT-IN FUNCTIONS
         function preload() {
             game.load.image('generator', 'assets/images/generator.png');
@@ -123,16 +42,15 @@
 
         function create() {
             electricSystem.SetStageBackColor('#BECED4');
-            electricSystem.CreateEsGraph(JSON.stringify(graph));
+            electricSystem.CreateEsGraph(graph);
         }
 
         function update() { }
         //#endregion BUILT-IN FUNCTIONS
     </script>
 
-
+    <!-- modal dialog -->
     <div id="dialog" title="Generator: Gen1" hidden>
-
         <table cellpadding="4">
             <tr>
                 <td>Name</td>
@@ -159,7 +77,6 @@
                 <td>11.00</td>
             </tr>
         </table>
-
     </div>
 
 </body>

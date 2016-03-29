@@ -15,8 +15,8 @@ var electricSystem = (function () {
         game.stage.backgroundColor = color;        
     }
 
-    function addGenerator(x, y, name) {
-        game.add.sprite(parseFloat(x), parseFloat(y), name);
+    function addGenerator(x, y, type) {
+        game.add.sprite(parseFloat(x), parseFloat(y), type);
     }
 
     function initGraphicsObject() {
@@ -65,17 +65,15 @@ var electricSystem = (function () {
         graphics.events.onInputDown.add(eventHandlers.alertMessageOnClick, this);
     }
     
-    function createEsGraph(model) {
-        
+    function createEsGraph(model) {       
         //desirialize graph model
-        esModel = JSON.parse(model);
-
+        esModel = JSON.parse(model);        
         initGraphicsObject();
 
         //add generators
         for (var i = 0; i < esModel.length; i++) {
             if (esModel[i].type === 'generator') {
-                addGenerator(esModel[i].x, esModel[i].y, esModel[i].name);
+                addGenerator(esModel[i].x, esModel[i].y, esModel[i].type);
             }
         }
 

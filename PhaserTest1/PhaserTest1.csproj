@@ -75,6 +75,7 @@
     <Content Include="js\ElectricSystemModule2.js" />
     <Content Include="js\ElectricSystemModule.js" />
     <Content Include="js\EventHandlersModule.js" />
+    <Content Include="js\GraphData.js" />
     <Content Include="libs\jquery-1.12.2.min.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
